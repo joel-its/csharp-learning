@@ -1,0 +1,38 @@
+﻿<Window x:Class="SystemInternalsWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SystemInternalsWPF"
+        mc:Ignorable="d"
+        Title="Systeminternals" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <GroupBox Grid.Row="0" Header="Eingabe" Margin="10" Padding="10">
+            <StackPanel>
+                <TextBlock>Information auswählen:</TextBlock>
+                <ComboBox Name="cboAuswahl" IsEditable="True">
+                    <ComboBoxItem>Systembenutzer</ComboBoxItem>
+                    <ComboBoxItem>Systemlaufzeit</ComboBoxItem>
+                    <ComboBoxItem>Freigaben</ComboBoxItem>
+                    <ComboBoxItem>Seriennummer</ComboBoxItem>
+                    <ComboBoxItem>DriveInfo</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Grid.Row="1" Header="Verarbeitung" Margin="10" Padding="10">
+            <Button Name="btnGetInfo" Margin="0,20" Click="btnGetInfo_Click">Informationen abfragen</Button>
+        </GroupBox>
+        <GroupBox Grid.Row="2" Header="Ausgabe" Margin="10" Padding="10">
+            <StackPanel>
+                <ScrollViewer  Height="Auto" Width="Auto" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible" >
+                    <TextBlock Name="txbAusgabe">....Ausgabedaten....</TextBlock>
+                </ScrollViewer>
+            </StackPanel>
+        </GroupBox>
+    </Grid>
+</Window>
