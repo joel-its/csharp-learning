@@ -22,6 +22,19 @@ namespace SwitchCaseDemo
             Console.WriteLine("Die Methoden GetDayType, Bewertung und SteuerKategorie weiter unten sind noch nicht implementiert.");
             Console.WriteLine("Implementieren Sie diese Schritt für Schritt und testen Sie sie in Main.");
             Console.WriteLine();
+            
+            
+            Console.WriteLine(GetDayType(5));
+            Console.WriteLine(GetDayType(7));
+            Console.WriteLine(GetDayType(10));
+            Console.WriteLine();
+            
+            Console.WriteLine(Bewertung(49));
+            Console.WriteLine(Bewertung(50));
+            Console.WriteLine(Bewertung(85));
+            Console.WriteLine(Bewertung(100));
+            Console.WriteLine(Bewertung(101));
+            Console.WriteLine();
 
             // HINWEIS FÜR SCHÜLERINNEN / SCHÜLER:
             // Wenn Sie mit einer Aufgabe fertig sind, können Sie hier in Main
@@ -102,7 +115,7 @@ namespace SwitchCaseDemo
                     break;
 
                 case string s:
-                    Console.WriteLine($"Es ist ein String mit Länge {s.Length}: "{s}"");
+                    Console.WriteLine($"Es ist ein String mit Länge {s.Length}: \"{s}\"");
                     break;
 
                 case null:
@@ -134,6 +147,23 @@ namespace SwitchCaseDemo
         // ---------------------------------------------------------------
         public static string GetDayType(int dayOfWeek)
         {
+            //switch (dayOfWeek)
+            //{
+            //    <= 5            => "Werktag",
+            //    >= 6 and <= 7   => "Wochenende",
+            //    else            => "Ungültig"
+            //}
+            
+            switch (dayOfWeek)
+            {
+                case <= 5:
+                    return "Werktag";
+                case >= 6 and <= 7:
+                    return "Wochenende";
+                default:
+                    return "Ungültig";
+            }
+
             // TODO: Implementieren Sie hier die Lösung mit einem klassischen switch.
             // Tipp:
             // switch (dayOfWeek)
@@ -141,7 +171,6 @@ namespace SwitchCaseDemo
             //     case 1:
             //         ...
             // }
-            throw new NotImplementedException();
         }
 
         // ---------------------------------------------------------------
@@ -161,14 +190,21 @@ namespace SwitchCaseDemo
         // ---------------------------------------------------------------
         public static string Bewertung(int punkte)
         {
-            // TODO: Implementieren Sie hier die Lösung mit einer switch expression.
+            return punkte switch
+            {
+                < 50 => "Mangelhaft",
+                >= 50 and <= 69 => "Ausreichend",
+                >= 70 and <= 89 => "Gut",
+                >= 90 and <= 100 => "Sehr gut",
+                _ => "Ungültig",
+            };
+            
             // Tipp:
             // return punkte switch
             // {
             //     < 50 => "Mangelhaft",
             //     ...
             // };
-            throw new NotImplementedException();
         }
 
         // ---------------------------------------------------------------
