@@ -32,6 +32,32 @@ namespace SystemInternalsWPF
            //...
            //switch(cboAuswahl.Text)...
            //...
+
+           eingabe = cboAuswahl.Text;
+           
+           switch (eingabe)
+           {
+               case ("Systembenutzer"):
+                    ausgabe = Systeminternals.GetUserInfo();
+                    break;
+               case ("Systemlaufzeit"):
+                   ausgabe  = Systeminternals.GetUpTime();
+                   break;
+               case ("Freigaben"):
+                   ausgabe  = Systeminternals.GetAllShares();
+                   break;
+               case ("Seriennummer"):
+                   ausgabe  = Systeminternals.GetSerialnumber();
+                   break;
+               case ("DriveInfo"):
+                   ausgabe  = Systeminternals.GetStorageInfo();
+                   break;
+               default:
+                   ausgabe = "Fehler";
+                   break;
+           }
+
+           txbAusgabe.Text = ausgabe;
         }
     }
 }
