@@ -35,7 +35,13 @@ namespace SwitchCaseDemo
             Console.WriteLine(Bewertung(100));
             Console.WriteLine(Bewertung(101));
             Console.WriteLine();
-
+            
+            Console.WriteLine(SteuerKategorie(new Fahrzeug("PKW", 2018)));
+            Console.WriteLine(SteuerKategorie(new Fahrzeug("PKW", 1999)));
+            Console.WriteLine(SteuerKategorie(new Fahrzeug("LKW", 2022)));
+            Console.WriteLine(SteuerKategorie(new Fahrzeug("PKW", 2025)));
+            Console.WriteLine();
+            
             // HINWEIS FÜR SCHÜLERINNEN / SCHÜLER:
             // Wenn Sie mit einer Aufgabe fertig sind, können Sie hier in Main
             // eigene Testaufrufe ergänzen, z. B.:
@@ -224,16 +230,24 @@ namespace SwitchCaseDemo
         //
         // Verwenden Sie Property Patterns und pattern matching im switch.
         // ---------------------------------------------------------------
-        public static string SteuerKategorie(Fahrzeug f)
+        public static string SteuerKategorie(Fahrzeug vehicle)
         {
-            // TODO: Implementieren Sie hier die Lösung mit Pattern Matching im switch.
+
+            return vehicle switch
+            {
+                { Typ: "PKW", Baujahr: > 2015 } => "Gering",
+                { Typ: "PKW", Baujahr: <= 2015 } => "Mittel",
+                { Typ: "LKW" } => "Hoch",
+                _ => "Unbekannt",
+
+            };
+            
             // Tipp:
             // return f switch
             // {
             //     { Typ: "PKW", Baujahr: > 2015 } => "Gering",
             //     ...
             // };
-            throw new NotImplementedException();
         }
 
         // Record-Typ für Aufgabe 3
