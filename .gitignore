@@ -1,0 +1,76 @@
+﻿# Build-Ergebnisse
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider / JetBrains
+.idea/
+*.sln.iml
+
+# VS Code
+.vscode/
+
+# NuGet
+packages/
+*.nupkg
+*.snupkg
+
+# Logs
+*.log
+
+# Test Results
+TestResults/
+
+# Coverage
+coverage/
+coverage.xml
+*.coverage
+*.coveragexml
+
+# Publish Output
+publish/
+
+# Azure
+PublishProfiles/
+
+# Entity Framework
+*.mdf
+*.ldf
+
+# OS-Dateien
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ReSharper
+_ReSharper*/
+*.DotSettings.user
+
+# Dotnet Tools
+.dotnet/
+
+# Rider Cache
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+
+# Secrets
+secrets.json
+appsettings.Development.json
+
+# SonarQube
+.sonarqube/
+
+# BenchmarkDotNet
+BenchmarkDotNet.Artifacts/
+
+# Paketmanager
+node_modules/
+
+# Generated Files
+Generated/
